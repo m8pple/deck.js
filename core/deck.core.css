@@ -6,10 +6,16 @@ html, body {
 
 .deck-container {
   position: relative;
-  min-height: 100%;
+  /* Moved to a view-port relative scaling. */
+  /* Make the viewport 4:3 (fails badly on vertical projectors) */
+  width: 133vh;
+  height: 100vh;
+  /* And make base font size proportional to the view-port to get scaling */
+  font-size: 4vh;
+  box-shadow: 0px 0px 0px 3px black inset;
   margin: 0 auto;
   overflow: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 .js .deck-container {
   visibility: hidden;
@@ -58,3 +64,5 @@ html, body {
 .deck-child-current .deck-previous, .deck-child-current .deck-before, .deck-child-current .deck-current {
   visibility: visible;
 }
+
+/*# sourceMappingURL=deck.core.css.map */

@@ -8,7 +8,7 @@
 }
 
 body > .deck-container .deck-status {
-  position: fixed;
+  position: absolute;
 }
 
 @media print {

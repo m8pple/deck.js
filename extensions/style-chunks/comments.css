@@ -42,6 +42,8 @@ body:not(.has-clones):not(.show-comments) .deck-container > .slide .comment, bod
 
 .deck-container > .slide div.comment.twolines {
   height: 40px;
-  margin-top: -13.333px;
-  margin-bottom: -26.667px;
+  margin-top: -13.33333px;
+  margin-bottom: -26.66667px;
 }
+
+/*# sourceMappingURL=comments.css.map */

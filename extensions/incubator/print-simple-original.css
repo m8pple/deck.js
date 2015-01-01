@@ -9,42 +9,53 @@
     -moz-box-reflect: none !important;
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
-    box-shadow: none !important; }
-    * :before, * :after {
-      display: none !important; }
+    box-shadow: none !important;
+  }
+  * :before, * :after {
+    display: none !important;
+  }
 
   a, a:visited {
     color: #444 !important;
-    text-decoration: underline; }
+    text-decoration: underline;
+  }
 
   a[href]:after {
-    content: " (" attr(href) ")"; }
+    content: " (" attr(href) ")";
+  }
 
   abbr[title]:after {
-    content: " (" attr(title) ")"; }
+    content: " (" attr(title) ")";
+  }
 
   .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
-    content: ""; }
+    content: "";
+  }
 
   pre, blockquote {
     border: 1px solid #999;
-    page-break-inside: avoid; }
+    page-break-inside: avoid;
+  }
 
   thead {
-    display: table-header-group; }
+    display: table-header-group;
+  }
 
   tr, img {
-    page-break-inside: avoid; }
+    page-break-inside: avoid;
+  }
 
   @page {
-    margin: 0.5cm; }
-
+    margin: 0.5cm;
+  }
   p, h2, h3 {
     orphans: 3;
-    widows: 3; }
+    widows: 3;
+  }
 
   h2, h3 {
-    page-break-after: avoid; }
+    page-break-after: avoid;
+  }
 
   .slide {
     position: static !important;
@@ -55,7 +66,8 @@
     -o-transform: none !important;
     -ms-transform: none !important;
     transform: none !important;
-    opacity: 1 !important; }
+    opacity: 1 !important;
+  }
 
   h1, .vcenter {
     -webkit-transform: none !important;
@@ -64,16 +76,23 @@
     -ms-transform: none !important;
     transform: none !important;
     padding: 0 !important;
-    position: static !important; }
+    position: static !important;
+  }
 
   .deck-container > .slide {
-    page-break-after: always; }
+    page-break-after: always;
+  }
 
   .deck-container {
     width: 100% !important;
     height: auto !important;
     padding: 0 !important;
-    display: block !important; }
+    display: block !important;
+  }
 
   script {
-    display: none; } }
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=print-simple-original.css.map */

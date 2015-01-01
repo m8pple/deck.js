@@ -5,12 +5,13 @@ h1 {
 }
 
 h2 {
-  font-size:1.5em;
+  font-size:1.7em;
   color:#c00;
   border-bottom-color:#ccc;
 }
 
 h3 {
+  font-size:1.3em;
   color:#888;
 }
 
@@ -21,6 +22,13 @@ pre {
 code {
   color:#888;
 }
+
+
+li li {
+  font-size : 95%;
+  padding : 0.15em 0 0 0;
+}
+
 
 blockquote {
   font-size:2em;
@@ -39,6 +47,15 @@ blockquote {
     font-weight:bold;
     color:#888;
   }
+}
+
+table, th, td {
+   border: 1px solid black;
+}
+
+td{
+  padding : 0.1em;
+  vertical-align : middle;
 }
 
 ::-moz-selection{ background:#c00; color:#fff; }
@@ -65,6 +82,22 @@ a {
   }
 }
 
+.screen_overlay{
+  position : absolute;
+  left : 2%;
+  top : 2%;
+  right : 2%;
+  bottom : 12%;
+}
+
+.screen_footer{
+  position:absolute;
+  left : 2%;
+  right : 2%;
+  top : 94%;
+  bottom : 2%;
+}
+
 .slide {
   .deck-before, .deck-previous {
     opacity:0.4;
@@ -78,6 +111,11 @@ a {
 
   .deck-child-current {
     opacity:1;
+  }
+  
+  /* Used to show up text */
+  .highlight {
+    color: red;
   }
 }
 
