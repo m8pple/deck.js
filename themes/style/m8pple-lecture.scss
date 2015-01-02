@@ -1,5 +1,10 @@
 @import "reset";
 
+/* Not sure what this is about in reset */
+p, blockquote, iframe, img, ul, ol, pre, video {
+  margin-bottom:0em;
+}
+
 h1 {
   color:#000;
 }
@@ -19,10 +24,17 @@ pre {
   border-color:#ccc;
 }
 
+td pre {
+  border: 0px;
+}
+
 code {
   color:#888;
 }
 
+ul, ol{
+  margin-left : 1.3em;
+}
 
 li li {
   font-size : 95%;
@@ -78,7 +90,7 @@ a {
   background:#fff;
 
   > .slide {
-    padding:0 48px;
+    padding:0 8vh;
   }
 }
 
