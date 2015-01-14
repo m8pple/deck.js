@@ -196,9 +196,14 @@ This module provides a support for managed svg inclusion (allowing proper DOM ac
                     onLoad: function($svg, w, h) {
                         var px = function (str) {return str.replace("px", "")}
                         var aa = $($svg.root());
+                        
                         aa.attr('width', '100%');
                         aa.attr('height', '100%');
-                        if (aa.attr('viewBox') == undefined) {
+                        // DT10 : Updated from aa.hasattr('viewBox')
+                        if (aa[0].hasAttribute('viewBox') != undefined) {
+                            // DT10 : And unlocked - I think it always failed to find the viewbox before
+                            event.releaseInit();
+                        }else{
                             if (w==undefined || h==undefined) {
                                 if (opts.alert.missingSVG) alert(
                                     "There seem to be a problem with the loading of\n   '"+attributes['src'] + "'\n"

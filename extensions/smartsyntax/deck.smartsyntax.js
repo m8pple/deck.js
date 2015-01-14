@@ -186,6 +186,7 @@ This module provides a support for a shorter syntax for slides.
             } else if (startsWithIgnoreCase(line, "@ANIM-ATTRIBUTE:")) {
                 line = line.replace(/@ANIM-ATTRIBUTE\: */i, "");
                 var main = line.split(/ *: */);
+                console.log("anim-attribute : " + main );
                 $("<div/>").addClass("anim-attribute slide").attr("data-dur", main[0]).attr("data-what", main[1]).attr("data-attr", main[2]+":"+main[3]).appendTo(deepestList);
             } else if (startsWithIgnoreCase(line, "@ANIM-ATTRIBUTE!:")) {
                 line = line.replace(/@ANIM-ATTRIBUTE\!\: */i, "");
