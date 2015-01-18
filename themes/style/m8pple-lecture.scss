@@ -61,13 +61,21 @@ blockquote {
   }
 }
 
-table, th, td {
+table tr td {
    border: 1px solid black;
 }
 
 td{
   padding : 0.1em;
   vertical-align : middle;
+}
+
+table.no-border {
+  border: 0;
+
+  tr td {
+   border: 0;
+  }
 }
 
 ::-moz-selection{ background:#c00; color:#fff; }
@@ -102,7 +110,7 @@ a {
   bottom : 12%;
 }
 
-.screen_footer{
+.screen-footer{
   position:absolute;
   left : 2%;
   right : 2%;
@@ -111,7 +119,7 @@ a {
 }
 
 .slide {
-  .deck-before, .deck-previous {
+  /*.deck-before, .deck-previous {
     opacity:0.4;
 
     &:not(.deck-child-current) {
@@ -119,7 +127,7 @@ a {
         opacity:1;
       }
     }
-  }
+  }*/
 
   .deck-child-current {
     opacity:1;
