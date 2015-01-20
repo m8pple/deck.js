@@ -308,9 +308,12 @@ https://github.com/imakewebthings/deck.js/blob/master/MIT-license.txt
         var container = $[deck]('getContainer');
         $(container).addClass(o.classes.animReady)
     }
-    $(document).bind('deck.init', function() {
-        doInit();
-    });
+    
+    if(!dt10NoAnim){
+        $(document).bind('deck.init', function() {
+            doInit();
+        });
+    }
         
 })(jQuery, 'deck');
 
