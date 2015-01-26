@@ -1,0 +1,3 @@
+$(function(){
+    $(".codeblock").codeblock();
+});

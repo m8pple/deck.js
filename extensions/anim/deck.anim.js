@@ -148,7 +148,12 @@ https://github.com/imakewebthings/deck.js/blob/master/MIT-license.txt
                             c.previousElement[i].attributes.removeNamedItem(realAttrName);
                         }
                     } else {*/
-                        $(c.previousElement[i]).animate(whatTo, 0);
+                        //$(c.previousElement[i]).attr(k, c.previousCss[i]);
+                        if(k=="src"){
+                            $(c.previousElement[i]).attr(k,c.previousCss[i]);
+                        }else{
+                            $(c.previousElement[i]).animate(whatTo, 0);
+                        }
                     //}
                 }
             },
@@ -174,12 +179,22 @@ https://github.com/imakewebthings/deck.js/blob/master/MIT-license.txt
                         var attr = this.attributes.getNamedItem(realAttrName);
                         c.previousCss.push(attr ? attr.value : null);
                     } else {*/
+                    if(k=="src"){
+                        var attr = this.attributes.getNamedItem(k);
+                        c.previousCss.push(attr ? attr.value : null);
+                    }else{
                         c.previousCss.push(v);
+                    }
                     //}
                 }); // save a list of elements and values
-                var whatTo = {}
-                whatTo[c.attribute()] = c.value()
-                c.all().animate(whatTo, c.dur()*factor)
+                
+                if(c.attribute()=="src"){
+                    c.all().attr(c.attribute(), c.value());
+                }else{    
+                    var whatTo = {}
+                    whatTo[c.attribute()] = c.value();
+                    c.all().animate(whatTo, c.dur()*factor)
+                }
             },
             fast: function(c) {this.doit(c,0)}
         });
