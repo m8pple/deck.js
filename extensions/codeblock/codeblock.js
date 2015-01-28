@@ -68,8 +68,20 @@
         setUpDom: function() {
             
 			this.base = this.original.clone();
-			this.base.html($.trim(this.base.html())); // strip whitespace
-			this.originalText=this.base.text();			
+			this.originalText=this.base.text();
+
+			/*var lines=this.originalText.split("\n");
+			console.log(this.originalText);
+			var acc="";
+			for(var i=0; i<lines.length; i++){
+				acc=acc+"<div>"+lines[i]+"</div>";
+			}
+			console.log(acc);
+			this.original.html(acc);
+			
+
+			this.original.html("<div>"+this.original.text()+"</div>");*/
+			this.original[0].contentEditable=true;
         },
 
         setUpEditor: function() {
