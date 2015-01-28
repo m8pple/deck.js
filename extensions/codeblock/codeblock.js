@@ -81,25 +81,7 @@
 			idConsole=this.base.attr('id')+"-console";
 			
 			console_wrapper=$("#"+idConsole);
-			if(console_wrapper.length){
-				
-				this.console=$("<span></span>").addClass("codeblock-console-text");
-				console_wrapper.append(this.console);
-				this.console.text(this.options.consoleText);
-				this.console.addClass("placeholder");
-			}else{
-				// build a console
-				var console_wrapper = $('<div></div>').addClass("codeblock-console");
-				this.console  = $("<span></span>").addClass("codeblock-console-text");
-				console_wrapper.append(this.console);
-				this.console.text(this.options.consoleText);
-				this.console.addClass("placeholder");
-				this.console.width(this.el.width() - 70);
-				
-				this.el.append(console_wrapper);
-			}
 			
-
 			if (this.options.runnable) {
 				this.runButton = $("<span></span>").addClass("codeblock-console-run");
 				this.runButton.text(this.options.runButtonText);
@@ -112,8 +94,12 @@
 				});
 				console_wrapper.append(this.runButton);
 			}
-
-            
+				
+			this.console=$("<span></span>").addClass("codeblock-console-text");
+			console_wrapper.append(this.console);
+			this.console.text(this.options.consoleText);
+			this.console.addClass("placeholder");
+           
         },
 
         createResetButton: function() {
