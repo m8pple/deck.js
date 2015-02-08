@@ -23,6 +23,7 @@ https://github.com/imakewebthings/deck.js/blob/master/MIT-license.txt
         selectors: {
             animShow: ".anim-show",
             animHide: ".anim-hide",
+            animVisible: ".anim-visible",
             animAddClass: ".anim-addclass",
             animRemoveClass: ".anim-removeclass",
             animAttribute: ".anim-attribute",
@@ -98,6 +99,18 @@ https://github.com/imakewebthings/deck.js/blob/master/MIT-license.txt
             undo: function(c) {c.all().animate({'opacity': 1.}, c.dur()/100)},
             doit: function(c) {c.all().animate({'opacity': 0.}, c.dur())},
             fast: function(c) {c.all().animate({'opacity': 0.}, 0)}
+        });
+        classical(o.selectors.animVisible, {
+            init: function(c) {
+                c.all().hide()
+            },
+            undo: function(c) {
+                c.all().hide()
+            },
+            doit: function(c) {
+                c.all().show(c.dur())
+            },
+            fast: function(c) {c.all().show()}
         });
         classical(o.selectors.animAddClass, {
             init: function(c) {c.all().each(function() { this.classList.remove(c.classs()) })},
