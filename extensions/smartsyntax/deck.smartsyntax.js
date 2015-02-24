@@ -61,9 +61,20 @@ This module provides a support for a shorter syntax for slides.
             }
             var addClasses = "";
             {
-                while (line.match(/^(.*)\[([^\] >]*)\]$/)) {
-                    addClasses = RegExp.$2 + " " + addClasses;
-                    line = RegExp.$1;
+                var todo=line;
+                line="";
+                while (1) {
+                    if(todo.match(/^(.*)\\\[(.*$)/)){
+                        // Handle escaped leading open bracket
+                        line=line+RegExp.$1+"[";
+                        todo=RegExp.$2;
+                    }else if(todo.match(/^(.*)\[([^\] >]*)\]$/)){
+                        addClasses = RegExp.$2 + " " + addClasses;
+                        todo = RegExp.$1;
+                    }else{
+                        line=line+todo;
+                        break;
+                    }
                 }
             }
             if (line == "") {
