@@ -1,7 +1,7 @@
 (function($, deck, undefined) {
     $(document).bind('deck.init', function() {
         var container = $[deck]('getContainer');
-        
+
         $('.markdown-table', container).each(function() {
             var src=$(this).html();
             var table=$('<table class="markdown-table-output" style="text-align:center"></table>');
@@ -32,8 +32,8 @@
             $(this).html("");
             $(this).append(table);
         });
-        
-        $(".markdown-table-output tr td").attr("width","6%");
+
+        //$(".markdown-table-output tr td").attr("width","6%");
     });
 
 })(jQuery, 'deck');
