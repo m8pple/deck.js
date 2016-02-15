@@ -10,7 +10,7 @@ h1 {
 }
 
 h2 {
-  font-size:1.7em;
+  font-size:1.5em;
   color:#c00;
   border-bottom-color:#ccc;
 }
@@ -36,8 +36,12 @@ ul, ol{
   margin-left : 1.3em;
 }
 
-li li {
+li {
   font-size : 95%;
+}
+
+li li {
+  font-size : 90%;
   padding : 0.15em 0 0 0;
 }
 
