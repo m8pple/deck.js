@@ -10,19 +10,25 @@
 	    var start=str[index];
 	    console.log("  skipString : "+index+", start="+start);
 	    
-	    
 	    var i=index+1;
-	    while(1){
-		b=str.indexOf("\\",i);
-		if(b==-1)
-		    break;
-		i=b+2;
+		while(1){
+			var b=str.indexOf("\\",i);
+			var e=str.indexOf(start,i);
+	    	if(e==-1){
+	    		console.log("    no end of string.");
+	    		return str.length;
+	    	}
+	    	if(b!=-1){
+				if(b<e){
+					// There is a bracket before closing quote
+					i=b+2;					
+					continue;
+				}
+
+	    	}
+	    	console.log("  string ended at "+i+", end = "+str[i]);
+	    	return i+1;
 	    }
-	    
-	    m=str.indexOf(start,i);
-	    if(m==-1)
-		return str.length;
-	    return m+1;
 	}
 	
 	function skipLineComment(str,index)
@@ -160,7 +166,8 @@
 	    $.ajax(srcFile, {
 		converters: { // This stops the script being evaluated in the global scope, where it might overwrite other functions
 		    'text script': function (text) {
-			eval(text); // Evaluate text locally so that we get still get syntax check
+			// Stop doing eval, as it messes around with anything using requirejs modules
+			//eval(text); // Evaluate text locally so that we get still get syntax check
 			return text;
 		    }
 		},
